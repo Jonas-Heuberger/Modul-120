@@ -26,6 +26,9 @@ SET time_zone = "+00:00";
 -- Structure de la table `benutzer`
 --
 
+CREATE database IF NOT EXISTS `book`;
+USE `book`;
+
 CREATE TABLE `benutzer` (
   `ID` int(10) unsigned NOT NULL,
   `benutzername` varchar(45) NOT NULL,

@@ -1,1 +1,4 @@
-<?php include('View/View_kunden.php'); ?>
+<?php 
+include('Controller/ControllerKundenSortByKid.php');
+
+?>

@@ -1,5 +1,3 @@
-<?php //include('Model/dbconnection.php'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -81,8 +81,8 @@ class Query {
         return $result;
     }
 
-    public function getBuecherDetails($conn, $limit, $id){
-        $query = "SELECT id, katalog, nummer, kurztitle, autor, kategorie, zustand, title, sprache, verfasser, FROM buecher where id = $id limit $limit;";
+    public function getBuecherDetails($conn, $id, $limit){
+        $query = "SELECT id, katalog, nummer, kurztitle, autor, kategorie, zustand, title, verfasser FROM buecher where id = $id limit $limit;";
         $result = $conn->query($query);
         return $result;
     }
@@ -142,7 +142,7 @@ class Query {
     }
 
     public function getKundenDetails($conn, $kid, $limit){
-        $query = "SELECT kid, vorname, name, kunde_seit, kontaktpermail FROM kunden order by kontaktpermail, geschlecht, email where kid = $kid limit $limit;"; 
+        $query = "SELECT kid, vorname, name, kunde_seit, kontaktpermail, kontaktpermail, geschlecht, email, geburtstag FROM kunden where kid = $kid limit $limit;"; 
         $result = $conn->query($query);
         return $result;
     }

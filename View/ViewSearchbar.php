@@ -35,11 +35,7 @@ class Searchbar{
 
         return $search;
         }
-    } 
-
-   
-
-   
+    }    
 }
 
 ?>

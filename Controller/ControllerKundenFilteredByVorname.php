@@ -7,17 +7,18 @@ include('Model/Query.php');
 include('Model/dbconnection.php');
 include('View/ViewSearchbar.php');
 
-    $navbar = new ViewNavbar();
-    echo $navbar->printNavbar();
+$navbar = new ViewNavbar();
+echo $navbar->printNavbar();
 
-    $searchbar = new Searchbar();
-    $search = $searchbar->searchbar();
+$searchbar = new Searchbar();
+$search = $searchbar->searchbar();
 
-    $query = new Query();
-    $result = $query->getKundenBySearchVorname($conn, $search);
+$limit = 20;
+$query = new Query();
+$result = $query->getKundenBySearchVorname($conn, $search, $limit);
 
-    $table = new ViewKunden();
-    echo $table->printTable($result, $conn);
+$table = new ViewKunden();
+echo $table->printTable($result, $conn);
 
 
 include('Partials/footer.php'); 

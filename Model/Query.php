@@ -3,6 +3,7 @@
 class Query {
 
 
+
     public function getBuecherById($conn, $limit){
         $query = "SELECT id, katalog, nummer, kurztitle, autor, kategorie, zustand  FROM buecher order by id limit $limit;";
         $result = $conn->query($query);
@@ -79,6 +80,12 @@ class Query {
         $result = $conn->query($query);
         return $result;
     }
+
+    public function getBuecherDetails($conn, $limit, $id){
+        $query = "SELECT id, katalog, nummer, kurztitle, autor, kategorie, zustand, title, sprache, verfasser, FROM buecher where id = $id limit $limit;";
+        $result = $conn->query($query);
+        return $result;
+    }
     
     public function getKundenById($conn, $limit){
         $query = "SELECT kid, vorname, name, kunde_seit, kontaktpermail FROM kunden order by kid limit $limit;"; 
@@ -111,7 +118,7 @@ class Query {
     }
 
     public function getKundenBySearchVorname($conn, $search, $limit){
-        $query = "SELECT kid, vorname, name, kunde_seit, kontaktpermail FROM kunden where vorname like '%$search% limit $limit';";
+        $query = "SELECT kid, vorname, name, kunde_seit, kontaktpermail FROM kunden where vorname like '%$search%' limit $limit;";
         $result = $conn->query($query);
         return $result;
     }
@@ -130,6 +137,12 @@ class Query {
 
     public function getKundenBySearchKontaktPerMail($conn, $search, $limit){
         $query = "SELECT kid, vorname, name, kunde_seit, kontaktpermail FROM kunden where kontaktpermail like '%$search%' limit $limit;";
+        $result = $conn->query($query);
+        return $result;
+    }
+
+    public function getKundenDetails($conn, $kid, $limit){
+        $query = "SELECT kid, vorname, name, kunde_seit, kontaktpermail FROM kunden order by kontaktpermail, geschlecht, email where kid = $kid limit $limit;"; 
         $result = $conn->query($query);
         return $result;
     }

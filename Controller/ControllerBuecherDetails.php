@@ -1,20 +1,27 @@
 <?php
+
 include('Partials/head.php');
 include('View/ViewNavbar.php'); 
-include('View/ViewKunden.php');
+include('View/ViewBuecher.php');
 include('Model/Query.php');
 include('Model/dbconnection.php');
 
+
+
     $navbar = new ViewNavbar();
-    echo $navbar->printNavbar();
-
-    $limit = 20;
+    $table = new ViewBuecherDetails();
     $query = new Query();
-    $result = $query->getKundenByKontaktPerMail($conn, $limit);
 
-    $table = new ViewKunden();
+    $navbar->printNavbar();
+
+    
+
+    $id = $_GET['id'];    
+    $limit = 20;
+    $result = $query->getBuecherDetails($conn, $limit, $id);
+
+    
     echo $table->printTable($result, $conn);
-
 
 include('Partials/footer.php'); 
 

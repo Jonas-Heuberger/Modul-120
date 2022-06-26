@@ -9,8 +9,9 @@ include('Model/dbconnection.php');
     $navbar = new ViewNavbar();
     echo $navbar->printNavbar();
 
+    $limit = 20;
     $query = new Query();
-    $result = $query->getKundenById($conn);
+    $result = $query->getKundenById($conn, $limit);
 
     $table = new ViewKunden();
     echo $table->printTable($result, $conn);

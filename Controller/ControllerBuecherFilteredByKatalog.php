@@ -13,8 +13,9 @@ echo $navbar->printNavbar();
 $searchbar = new Searchbar();
 $search = $searchbar->searchbar();
 
+$limit = 20;
 $query = new Query();
-$result = $query->getBuecherBySearchKatalog($conn, $search);
+$result = $query->getBuecherBySearchKatalog($conn, $search, $limit);
 
 $table = new ViewBuecher();
 echo $table->printTable($result, $conn);

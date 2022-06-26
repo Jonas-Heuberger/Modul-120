@@ -9,11 +9,12 @@ include('Model/dbconnection.php');
     $navbar = new ViewNavbar();
     echo $navbar->printNavbar();
 
+    $limit = 20;
     $query = new Query();
-    $result = $query->getBuecherByKurztitle($conn);
+    $result = $query->getBuecherByKurztitle($conn, $limit);
 
     $table = new ViewBuecher();
-    echo $table->printTable($result, $conn);
+    echo $table->printTable($result, $conn, );
 
 include('Partials/footer.php'); 
 

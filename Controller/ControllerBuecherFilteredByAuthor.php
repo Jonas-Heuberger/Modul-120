@@ -12,6 +12,7 @@ include('View/ViewSearchbar.php');
 
     $searchbar = new Searchbar();
     $search = $searchbar->searchbar();
+
     $limit = 20;
     $query = new Query();
     $result = $query->getBuecherBySearchAutor($conn, $search, $limit);

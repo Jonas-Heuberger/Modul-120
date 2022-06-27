@@ -1,18 +1,23 @@
 <?php
 
-
+// Klasse ViewBuecherDetails
 class ViewBuecherDetails{
 
+  // printTable Funktion die die Query Datensätze und die Connection übernimmt
     public function printTable($result, $conn){
+
+      // Geprüft ob der Query leer ist
         if ($result!== false && $result->num_rows > 0) {
 
            
-
+            // Ausgabe Tabellen Kopf 
             echo "<table class='table'><tr><th>Katalog</th><th>Nummer</th><th>Kurztitel</th><th>Autor</th><th>Kategorie</th><th>Zustand</th><th>Titel</th><th>Verfasser</th></tr>";
 
+            // Hier wird die Row ausgegeben
             // output data of each row
             while($row = $result->fetch_assoc()) {
 
+              // hier fange ich eine Variable ab und verändere ihren Wert 
               if ($row["zustand"] == 'G') {
                 $row['zustand'] = "Gut";
               } else if ($row['zustand'] == 'M') {
@@ -39,13 +44,6 @@ class ViewBuecherDetails{
             echo "0 results";
             }
             $conn->close();  
-             echo ' <ul class="pagination">
-             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-             <li class="page-item"><a class="page-link" href="#">1</a></li>
-             <li class="page-item"><a class="page-link" href="#">2</a></li>
-             <li class="page-item"><a class="page-link" href="#">3</a></li>
-             <li class="page-item"><a class="page-link" href="#">Next</a></li>
-           </ul>';
         }
     }
 ?>

@@ -1,4 +1,1 @@
-<?php 
-include('Controller/ControllerKundenSortByKid.php');
-
-?>
+<?php include('Controller/ControllerKundenSortByKid.php');?>

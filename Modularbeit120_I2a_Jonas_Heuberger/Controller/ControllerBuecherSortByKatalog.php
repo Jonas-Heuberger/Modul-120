@@ -9,9 +9,9 @@ include('Model/dbconnection.php');
     $navbar = new ViewNavbar();
     echo $navbar->printNavbar();
 
-    $limit = 20;
+   
     $query = new Query();
-    $result = $query->getBuecherByKatalog($conn, $limit);
+    $result = $query->getBuecherByKatalog($conn);
 
     $table = new ViewBuecher();
     echo $table->printTable($result, $conn);

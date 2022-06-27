@@ -8,9 +8,9 @@ include('Model/dbconnection.php');
     $navbar = new ViewNavbar();
     echo $navbar->printNavbar();
 
-    $limit = 20;
+  
     $query = new Query();
-    $result = $query->getKundenByKundeSeit($conn, $limit);
+    $result = $query->getKundenByKundeSeit($conn);
 
     $table = new ViewKunden();
     echo $table->printTable($result, $conn);

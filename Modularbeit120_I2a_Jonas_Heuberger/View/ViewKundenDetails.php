@@ -1,11 +1,15 @@
 <?php 
 class ViewKundenDetails {
 
+  // printTable Funktion
   public function printTable($result, $conn){
+    // geprüft ob der Query keine Datensätze enthält
     if ($result!== false && $result->num_rows > 0) {
  
+      // Tabellen Kopf
     echo "<table class='table'><tr><th>Vorname</th><th>Nachname</th><th>Kunde Seit</th><th>Kontakt per Mail</th><th>Geschlecht</th><th>Email</th><th>Geburtstag</th></tr>";
     // output data of each row
+  // Alle Datensätze gemäss Query werden ausgegeben
     while($row = $result->fetch_assoc()) {
 
       if ($row['kontaktpermail'] == 1) {

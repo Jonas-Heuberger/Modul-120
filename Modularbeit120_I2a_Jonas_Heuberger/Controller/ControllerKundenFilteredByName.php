@@ -13,9 +13,8 @@ echo $navbar->printNavbar();
 $searchbar = new Searchbar();
 $search = $searchbar->searchbar();
 
-$limit = 20;
 $query = new Query();
-$result = $query->getKundenBySearchName($conn, $search, $limit);
+$result = $query->getKundenBySearchName($conn, $search);
 
 $table = new ViewKunden();
 echo $table->printTable($result, $conn);

@@ -8,9 +8,8 @@ include('Model/dbconnection.php');
     $navbar = new ViewNavbar();
     echo $navbar->printNavbar();
 
-    $limit = 20;
     $query = new Query();
-    $result = $query->getKundenByVorname($conn, $limit);
+    $result = $query->getKundenByVorname($conn);
 
     $table = new ViewKunden();
     echo $table->printTable($result, $conn);

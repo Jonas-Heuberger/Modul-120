@@ -13,9 +13,9 @@ echo $navbar->printNavbar();
 $searchbar = new Searchbar();
 $search = $searchbar->searchbar();
 
-$limit = 20;
+
 $query = new Query();
-$result = $query->getBuecherBySearchZustand($conn, $search, $limit);
+$result = $query->getBuecherBySearchZustand($conn, $search);
 
 $table = new ViewBuecher();
 echo $table->printTable($result, $conn);

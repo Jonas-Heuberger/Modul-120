@@ -2,6 +2,7 @@
 
 class ViewNavbar {
 
+  // printNavbar Funktion die einfach die Navbar ausgibt
 public function printNavbar()
 {
   echo '
